@@ -15,8 +15,8 @@ public class dtoEducacion {
     @NotBlank
     private String fechaFE;
 
+
     //Constructor
-    
     public dtoEducacion() {
     }
 
@@ -60,7 +60,6 @@ public class dtoEducacion {
         this.fechaFE = fechaFE;
     }
     
-    
-    
+       
     
 }

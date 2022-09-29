@@ -2,6 +2,7 @@
 package com.miPortfolio.PortfolioFMC.Dto;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 
 public class dtoPersona {
@@ -14,6 +15,10 @@ public class dtoPersona {
     @NotBlank
     private String profesion;
     
+    @NotBlank
+    @Size(min = 1, max = 500, message = "no cumple con la longitud")
+    private String descripcion;
+    
     private String img; 
     
     
@@ -22,10 +27,11 @@ public class dtoPersona {
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido,String profesion, String img) {
+    public dtoPersona(String nombre, String apellido,String profesion, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.profesion = profesion;
+        this.descripcion = descripcion;
         this.img = img;
     }
     
@@ -61,6 +67,14 @@ public class dtoPersona {
 
     public void setProfesion(String profesion) {
         this.profesion = profesion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
     

@@ -79,7 +79,7 @@ public ResponseEntity<?> create(@RequestBody dtoPersona dtopersona){
         return new ResponseEntity(new Mensaje("Ese nombre ya existe"),HttpStatus.BAD_REQUEST);
     }
     
-    Persona persona = new Persona (dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getProfesion(), dtopersona.getImg());
+    Persona persona = new Persona (dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getProfesion(), dtopersona.getDescripcion(), dtopersona.getImg());
     
     sPersona.save(persona);
     return new ResponseEntity(new Mensaje("Se cargo la eduacacion correctamente"),HttpStatus.OK);
@@ -103,6 +103,7 @@ public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPers
     persona.setNombre(dtopersona.getNombre());
     persona.setApellido(dtopersona.getApellido());
     persona.setProfesion(dtopersona.getProfesion());
+    persona.setDescripcion(dtopersona.getDescripcion());
     
     sPersona.save(persona);
     
